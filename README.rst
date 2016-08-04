@@ -9,8 +9,8 @@ Django JET
 
 Django JET has two kinds of licenses: open-source (GPLv2) and commercial. Please note that using GPLv2
 code in your programs make them GPL too. So if you don't want to comply with that we can provide you a commercial
-license (in this case please email at support@jet.geex-arts.com). The commercial license
-is designed for using Django JET in commercial products and applications without the provisions of the GPLv2.
+license (visit Home page). The commercial license is designed for using Django JET in commercial products
+and applications without the provisions of the GPLv2.
 
 .. image:: https://raw.githubusercontent.com/geex-arts/jet/static/logo.png
     :width: 500px
@@ -43,10 +43,6 @@ Screenshots
     :align: center
     :target: https://raw.githubusercontent.com/geex-arts/jet/static/screen3.png
 
-Beta
-====
-Current version is still in beta phase. Use it at your own risk (though may be already enough workable).
-
 License
 =======
 Django JET is licensed under a
@@ -73,15 +69,35 @@ Installation
         'django.contrib.admin',
     )
         
-* Make sure 'django.core.context_processors.request' context processor is enabled in settings.py:
+* Make sure ``django.template.context_processors.request`` context processor is enabled in settings.py (Django 1.8+ way):
 
 .. code:: python
-        
-    from django.conf import global_settings
-    
-    TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-        'django.core.context_processors.request',
-    )
+
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    ...
+                    'django.template.context_processors.request',
+                    ...
+                ],
+            },
+        },
+    ]
+
+.. warning::
+    Before Django 1.8 you should specify context processors different way. Also use ``django.core.context_processors.request`` instead of ``django.template.context_processors.request``.
+
+    .. code:: python
+
+        from django.conf import global_settings
+
+        TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+            'django.core.context_processors.request',
+        )
 
 * Add URL-pattern to the urlpatterns of your Django project urls.py file (they are needed for related–lookups and autocompletes):
 

@@ -1,6 +1,56 @@
 Changelog
 =========
 
+0.1.5
+-----
+* Add inlines.min.js
+* Specify IE compatibility version
+* Add previous/next buttons to change form
+* Add preserving filters when returning to changelist
+* Add opened tab remembering
+* Fix breadcrumbs text overflow
+* PR-65: Fixed Django 1.8+ compatibility issues (thanks to hanuprateek, SalahAdDin, cdrx for pull requests)
+* PR-73: Added missing safe template tag on the change password page (thanks to JensAstrup for pull request)
+
+
+0.1.4
+-----
+* [Feature] Side bar compact mode (lists all models without opening second menu)
+* [Feature] Custom side bar menu applications and models content and ordering
+* [Feature] Related objects actions in nice-looking popup instead of new window
+* [Feature] Add changelist row selection on row background click
+* [Fix] Better 3rd party applications template compatibility
+* [Fix] JET and Django js translation conflicts
+* [Fix] Hide empty model form labels
+* [Fix] Wrong positioning for 0 column
+* [Fix] Issue-21: Init label wrapped checkboxes
+* [Improvement] Add top bar arrow transition
+
+
+0.1.3
+-----
+* [Feature] Add theme choosing ability
+* [Feature] New color themes
+* [Fix] Refactor themes
+* [Fix] Rename JET_THEME configuration option to JET_DEFAULT_OPTION
+* [Fix] Fixed scrolling to top when side menu opens
+* [Fix] Fixed read only fields paddings
+* [Fix] Issue-18: Remove unused resources which may brake static processing (thanks to DheerendraRathor for the report)
+* [Fix] Issue-19: Fixed datetime today button (thanks to carlosfvieira for the report)
+
+
+0.1.2
+-----
+* [Fix] Issue-14: Fixed ajax fields choices being rendered in page (thanks to dnmellen for the report)
+* [Fix] Issue-15: Fixed textarea text wrapping in Firefox
+* [Feature] PR-16: Allow usage of select2_lookups filter in ModelForms outside of Admin (thansk to dnmellen for pull request)
+* [Fix] Fixed select2_lookups for posted data
+* [Feature] Issue-14: Added ajax related field filters
+* [Fix] Made booleanfield icons cross browser compatible
+* [Fix] Issue-13: Added zh-hans i18n
+* [Feature] Separate static browser cache for each jet version
+
+
 0.1.1
 -----
 * [Feature] Added fade animation to sidebar application popup
